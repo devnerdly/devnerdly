@@ -1,3 +1,5 @@
+![Add a heading](https://github.com/user-attachments/assets/85a9be51-5615-4bb1-91c7-dc0acd8016b6)
+
 # Hey There, I’m **nerdly**! 👋
 
 Welcome to my GitHub! I’m a **Fullstack Developer**, **Vibe Coder**, and **tech wizard** with a passion for crafting scalable, user-first web solutions that push boundaries. I thrive on blending modern tech stacks with AI-driven innovation to deliver high-impact projects. If you’re looking for a developer who vibes with creativity and precision, you’ve found the right guy!
