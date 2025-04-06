@@ -1,4 +1,4 @@
-![Add a heading](https://github.com/user-attachments/assets/85a9be51-5615-4bb1-91c7-dc0acd8016b6)
+![Untitled design (9)](https://github.com/user-attachments/assets/369c14da-459f-4bab-b3f3-66960c2afbad)
 
 # Hey There, I’m **nerdly**! 👋
 
