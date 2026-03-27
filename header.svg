@@ -1,4 +1,4 @@
-<svg width="800" height="200" xmlns="http://www.w3.org/2000/svg">
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
       @keyframes flicker {
@@ -9,23 +9,9 @@
         96% { opacity: 0.3; }
         97% { opacity: 1; }
       }
-      @keyframes scanline {
-        0% { transform: translateY(-200px); }
-        100% { transform: translateY(200px); }
-      }
       @keyframes cursor {
         0%, 100% { opacity: 1; }
         50% { opacity: 0; }
-      }
-      @keyframes typewriter {
-        0% { width: 0; }
-        100% { width: 340px; }
-      }
-      .title {
-        font-family: 'Courier New', monospace;
-        font-size: 14px;
-        fill: #58a6ff;
-        animation: flicker 8s infinite;
       }
       .subtitle {
         font-family: 'Courier New', monospace;
@@ -55,11 +41,31 @@
         font-size: 12px;
         fill: #8b949e;
       }
+      .output-bright {
+        font-family: 'Courier New', monospace;
+        font-size: 12px;
+        fill: #e6edf3;
+      }
       .classified {
         font-family: 'Courier New', monospace;
         font-size: 11px;
         fill: #f85149;
         letter-spacing: 6px;
+      }
+      .bar {
+        font-family: 'Courier New', monospace;
+        font-size: 12px;
+        fill: #7ee787;
+      }
+      .confirmed {
+        font-family: 'Courier New', monospace;
+        font-size: 12px;
+        fill: #58a6ff;
+      }
+      .dim {
+        font-family: 'Courier New', monospace;
+        font-size: 11px;
+        fill: #484f58;
       }
       .border-glow {
         stroke: #58a6ff;
@@ -77,14 +83,14 @@
   </defs>
 
   <!-- Background -->
-  <rect width="800" height="200" rx="8" fill="#0d1117"/>
+  <rect width="800" height="400" rx="8" fill="#0d1117"/>
 
   <!-- Subtle border -->
-  <rect x="1" y="1" width="798" height="198" rx="8" class="border-glow"/>
+  <rect x="1" y="1" width="798" height="398" rx="8" class="border-glow"/>
 
   <!-- Scanline effect -->
   <rect width="800" height="2" fill="#58a6ff" opacity="0.03">
-    <animateTransform attributeName="transform" type="translate" values="0,-200;0,200" dur="4s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="translate" values="0,-400;0,400" dur="4s" repeatCount="indefinite"/>
   </rect>
 
   <!-- Top bar -->
@@ -102,32 +108,49 @@
   <!-- Line separator -->
   <line x1="0" y1="32" x2="800" y2="32" class="line"/>
 
-  <!-- Prompt line 1 -->
+  <!-- whoami -->
   <text x="20" y="62" class="prompt">~</text>
   <text x="36" y="62" class="command">whoami</text>
-
-  <!-- Output line 1 -->
   <text x="20" y="82" class="output">fullstack developer · 15+ years · building things for the web</text>
+  <text x="20" y="98" class="dim">some of them you've used. most of them you'll never know about.</text>
 
-  <!-- Prompt line 2 -->
-  <text x="20" y="112" class="prompt">~</text>
-  <text x="36" y="112" class="command">cat /proc/status</text>
+  <!-- cat /proc/status -->
+  <text x="20" y="128" class="prompt">~</text>
+  <text x="36" y="128" class="command">cat /proc/status</text>
+  <text x="20" y="150" class="bar">[■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■]</text>
+  <text x="280" y="150" class="output-bright">ACTIVE</text>
+  <text x="20" y="170" class="confirmed">[CONFIRMED]</text>
+  <text x="120" y="170" class="output">£2m+ revenue generated for clients</text>
+  <text x="20" y="188" class="confirmed">[CONFIRMED]</text>
+  <text x="120" y="188" class="output">95% client retention rate</text>
+  <text x="20" y="206" class="confirmed">[CONFIRMED]</text>
+  <text x="120" y="206" class="output">Certified API Security Analyst</text>
 
-  <!-- Output line 2 -->
-  <text x="20" y="132" class="classified">▓▓▓  CLASSIFIED  ▓▓▓</text>
+  <!-- cat /proc/status classified -->
+  <text x="20" y="236" class="prompt">~</text>
+  <text x="36" y="236" class="command">cat /var/log/ops.log</text>
+  <text x="20" y="258" class="classified">▓▓▓  CLASSIFIED  ▓▓▓</text>
+  <text x="20" y="278" class="output">operating in undisclosed sectors</text>
+  <text x="20" y="296" class="output">building systems that don't officially exist</text>
+
+  <!-- separator -->
+  <line x1="20" y1="316" x2="780" y2="316" class="line"/>
+
+  <!-- last seen -->
+  <text x="20" y="338" class="dim">last seen ··· building something you'll hear about later</text>
 
   <!-- Status indicators -->
-  <circle cx="20" cy="160" r="3" class="dot-active"/>
-  <text x="30" y="164" class="output">active</text>
+  <circle cx="20" cy="365" r="3" class="dot-active"/>
+  <text x="30" y="369" class="output">active</text>
 
-  <circle cx="100" cy="160" r="3" class="dot-idle"/>
-  <text x="110" y="164" class="output">3 systems online</text>
+  <circle cx="100" cy="365" r="3" class="dot-idle"/>
+  <text x="110" y="369" class="output">1000+ systems online</text>
 
-  <circle cx="230" cy="160" r="3" class="dot-idle"/>
-  <text x="240" y="164" class="output">uptime: 15y 3m 12d</text>
+  <circle cx="240" cy="365" r="3" class="dot-idle"/>
+  <text x="250" y="369" class="output">uptime: 15y 3m 12d</text>
 
   <!-- Cursor -->
-  <text x="20" y="186" class="prompt">~</text>
-  <rect x="36" y="176" width="8" height="14" class="cursor-block"/>
+  <text x="20" y="392" class="prompt">~</text>
+  <rect x="36" y="382" width="8" height="14" class="cursor-block"/>
 
 </svg>
